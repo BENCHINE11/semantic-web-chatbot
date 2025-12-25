@@ -1,85 +1,166 @@
-# Chatbot Web Sémantique (Santé)
+# Chatbot Web Sémantique — Domaine Santé 🩺
 
-Ce projet implémente un mini chatbot utilisant les technologies du Web sémantique :
-- Ontologie OWL et base de connaissances en RDF (domaine de la santé)
-- Graphe de connaissances interrogé en SPARQL
-- Module NLP simple pour transformer une question en requête SPARQL
+Projet académique visant à démontrer l’utilisation conjointe de :
 
-## Installation
+- NLP (traitement du langage naturel)
+- Ontologies OWL
+- RDF & Graphe de connaissances
+- SPARQL
 
+pour construire un chatbot capable d’interroger une base de connaissances médicale.
+
+L’utilisateur pose une question en langage naturel (ex. *« Dans quels établissements travaille Dr Hicham ? »*),
+le système la convertit en requête SPARQL, interroge le graphe RDF et renvoie une réponse compréhensible.
+
+
+## 🎯 Objectifs pédagogiques
+
+Ce projet montre concrètement :
+
+1. Comment passer d’un texte humain à une requête sémantique.
+1. Comment une ontologie OWL structure un domaine (ici : santé).
+1. Comment RDF permet de créer un graphe de connaissances.
+1. Comment SPARQL permet d’interroger ce graphe.
+1. Comment intégrer tout cela dans un chatbot fonctionnel.
+
+## 🏥 Domaine d'application : la santé
+
+Le domaine modélisé couvre notamment :
+
+- Médecins
+- Patients
+- Établissements de santé
+- Diagnostics
+- Traitements
+
+Les relations principales incluent :
+
+- `aPourPatient` — lie un médecin à ses patients
+- `TravailleDans` — lie un médecin à son établissement
+- `aPourDiagmostic` — lie un patient à un diagnostic
+- `prescrit` — lie un médecin à un traitement
+
+## 📚 Ontologie et Base de Connaissances utilisées
+
+Le projet s’appuie sur une ontologie existante publiée sur GitHub :
+
+👉 [https://github.com/Ahmedmessoudi/Project-WebSemantique](https://github.com/Ahmedmessoudi/Project-WebSemantique)
+
+Les fichiers suivants ont été utilisés :
+
+| Fichier |	Rôle |
+|---|---|
+| sante_ontologie.owl	| Ontologie (schéma, TBox) — éditée sous Protégé |
+| sante_ontologie.rdf	| Base de connaissances RDF (ABox) — utilisée par le chatbot |
+
+💡
+Le fichier `.rdf` contient déjà **classes** + **propriétés** + **individus**, et il est entièrement compatible avec `rdflib`.
+Le chatbot charge donc ce fichier pour construire et interroger le graphe.
+
+**📌 Remerciement**
+
+>Merci à Ahmed Messoudi pour la mise à disposition publique de ces fichiers OWL/RDF qui servent de fondation au projet.
+
+## ⚙️ Architecture technique
+```text
+Utilisateur → NLP → Générateur SPARQL → Graphe RDF → Réponse textuelle
+```
+
+
+Organisation du projet :
+
+```text
+web-semantique-chatbot/
+├─ ontology/
+│  ├─ sante_ontologie.owl
+│  └─ sante_ontologie.rdf
+├─ src/
+│  ├─ kb.py
+│  ├─ nlp.py
+│  └─ chatbot.py
+├─ report/
+│  └─ rapport.md
+└─ README.md
+```
+
+## ▶️ Exécution du projet
+### 1️⃣ Installer les dépendances
 ```bash
 pip install -r requirements.txt
 ```
 
-## Exécution
-```bash 
+### 2️⃣ Lancer le chatbot
+```bash
 python src/chatbot.py
 ```
 
-## Exemples de questions :
+## 💬 Exemples d’utilisation
+#### Exemple 1 — Établissements d’un médecin
 
-- `Quels sont les symptômes de la grippe ?`
-- `Quel est le traitement de la migraine ?`
+**Question :**
 
+```nginx
+Dans quels établissements travaille Dr Hicham ?
+```
 
----
+**Requête SPARQL générée :**
+```sparql
+PREFIX ont: <http://www.co-ode.org/ontologies/ont.owl#>
 
-## 8. Rapport (rapide mais propre) dans `report/rapport.md`
+SELECT DISTINCT ?etab WHERE {
+  ont:DrHicham ont:TravailleDans ?etab .
+}
+```
 
-Je te propose une structure **très courte**, que tu peux remplir vite :
+**Réponse du chatbot :**
+```yaml
+DrHicham travaille dans : Cabine_DrHicham, Hopital_IbnSina.
+```
 
-```markdown
-# Projet Web Sémantique : Chatbot pour la santé
+➡️ La réponse provient directement du **graphe RDF**.
 
-## 1. Introduction
-- Du Web de documents au Web de données.
-- Objectif : construire un chatbot qui répond à des questions de santé en s'appuyant sur une ontologie, un graphe RDF et des requêtes SPARQL.
+## 🔍 Fonctionnement interne (A → Z)
 
-## 2. Technologies utilisées
-- RDF pour représenter les connaissances sous forme de triplets.
-- OWL pour définir l'ontologie du domaine (Maladie, Symptome, Traitement).
-- Base de connaissance = ensemble d'individus RDF instanciant l'ontologie.
-- SPARQL pour interroger le graphe.
-- NLP (pattern matching) pour analyser les questions et construire les requêtes SPARQL.
+1️⃣ **Chargement de la base de connaissances**
+`rdflib` lit le fichier RDF et construit un graphe en mémoire.
 
-## 3. Modélisation du domaine (Ontologie OWL)
-- Classes : `Maladie`, `Symptome`, `Traitement`.
-- Propriétés d'objet : `aSymptome`, `estTraiteePar`.
-- Exemple d'individus : `Grippe`, `Migraine`, `Fievre`, `Toux`, `Paracetamol`, `Ibuprofene`.
+2️⃣ **Analyse NLP de la question**
+Un module NLP simple (pattern-based) détecte :
 
-## 4. Construction de la base de connaissances (RDF)
-- Fichier `ontology/sante.owl.ttl` contenant :
-  - la TBox (classe, propriétés OWL),
-  - l'ABox (triplets RDF représentant les maladies, symptômes et traitements).
-- Ce fichier est chargé dans le programme Python via `rdflib`.
+- l’intention → (*patients, traitements, établissements, diagnostic…*)
+- l’entité → (*DrAymen, COVID19, etc.*)
 
-## 5. NLP et génération de requêtes SPARQL
-- Module `nlp.py` :
-  - détecte l'intention de la question (symptômes d'une maladie, traitements d'une maladie),
-  - extrait la maladie (ex : Grippe, Migraine) à partir de la question.
-- Génération de requêtes SPARQL paramétrées en fonction de l'intention :
-  - Exemple : récupérer les symptômes d'une maladie donnée.
+3️⃣ **Génération automatique d’une requête SPARQL**
 
-## 6. Chatbot sémantique
-- Module `chatbot.py` :
-  - boucle de dialogue en console,
-  - pour chaque question :
-    - NLP → intention + maladie,
-    - construction de la requête SPARQL,
-    - exécution sur le graphe RDF,
-    - formatage de la réponse en langage naturel.
+4️⃣ **Exécution sur le graphe RDF**
 
-## 7. Résultats et limites
-- Le chatbot répond correctement à des questions simples :
-  - "Quels sont les symptômes de la grippe ?"
-  - "Quel est le traitement de la migraine ?"
-- Limites :
-  - NLP basé sur des règles simples,
-  - domaine limité à quelques maladies et traitements.
+5️⃣ **Transformation en réponse lisible**
 
-## 8. Conclusion et perspectives
-- Le projet illustre le lien entre NLP, Web sémantique et graphe de connaissances.
-- Pistes d'amélioration :
-  - élargir le domaine,
-  - utiliser un modèle NLP plus avancé,
-  - ajouter une interface web.
+## 🚀 Améliorations possibles
+
+Pour des prochaines versions :
+
+- ✔️ Ajouter une **interface web** (Flask / React)
+- ✔️ Supporter plus de types de questions (symptômes, examens, prescriptions complexes…)
+- ✔️ Utiliser un vrai modèle NLP (spaCy / Transformers)
+- ✔️ Ajouter un moteur d’inférence OWL (raisonneur)
+- ✔️ Étendre la base de connaissances avec des données ouvertes (SNOMED, UMLS…)
+
+## 🧰 Technologies utilisées
+| Technologie |	Rôle |
+|---|---|
+| **Python** | Backend & chatbot |
+| **rdflib** |	Manipulation RDF + SPARQL |
+| **OWL** |	Modélisation sémantique du domaine |
+| **RDF/XML** |	Représentation des connaissances |
+| **SPARQL** |	Langage d’interrogation |
+| **NLP (rules-based)** |	Analyse des questions |
+| **Protégé** |	Conception et édition de l’ontologie |
+
+## ✍️ Auteur
+
+**Abdelilah BENCHINE**
+ENSA Tanger — Module Web Sémantique
+
+📧 contact sur demande
+🙏 Merci à **Ahmed Messoudi** pour la contribution open-source à l’ontologie.
