@@ -1,0 +1,1604 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/lenovo/ontologies/2025/4/untitled-ontology-18#"
+     xml:base="http://www.semanticweb.org/lenovo/ontologies/2025/4/untitled-ontology-18"
+     xmlns:ont="http://www.co-ode.org/ontologies/ont.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/lenovo/ontologies/2025/4/untitled-ontology-18">
+        <rdfs:comment xml:lang="fr">this ontology is about healthcare</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#TravailleDans -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#TravailleDans">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Personne"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#EtablissementSante"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#aPourDiagmostic -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#aPourDiagmostic">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Patient"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Personne"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostic"/>
+        <rdfs:label xml:lang="fr">aPourDiagnostic</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#aPourPatient -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#aPourPatient">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Medecin"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Personne"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Patient"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Personne"/>
+        <rdfs:comment xml:lang="fr">Lie un acte médical au patient concerné</rdfs:comment>
+        <rdfs:label xml:lang="fr">aPourPatient</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#aPourSpecialite -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#aPourSpecialite">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Medecin"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Personne"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Specialiste"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Pathologie"/>
+        <rdfs:label xml:lang="fr">aPourSpecialite</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#esrPrescritPar -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#esrPrescritPar">
+        <owl:inverseOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#prescrit"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Medecin"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Personne"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+        <rdfs:comment xml:lang="fr">faire une preinscription</rdfs:comment>
+        <rdfs:label>estPrescritPar</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#estRealisePar -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#estRealisePar">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Personne"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+        <rdfs:label xml:lang="fr">estRealisePar</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#prescrit -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#prescrit">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Medecin"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Specialiste"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
+        <rdfs:label xml:lang="fr">prescrit</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#utiliseMed -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#utiliseMed">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Traitement"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Medicament"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty">
+        <owl:inverseOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Nom -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#Nom">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#adresse -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#adresse">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#EtablissementSante"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Fonctionnelle (chaque hôpital a une seule adresse)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#codeCIM -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#codeCIM">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Personne"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="fr">Code de classification internationale des maladies</rdfs:comment>
+        <rdfs:label xml:lang="fr">code CIM-10</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#dateActe -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#dateActe">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Patient"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Personne"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="fr">date de l&apos;acte</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#dateNaissance -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#dateNaissance">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Personne"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="fr">date de naissance</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#frequence -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#frequence">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>freaquence / description</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#genre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#genre">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Personne"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#nom -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#nom">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Personne"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="fr">nom de famille</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#nomDiag -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#nomDiag">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#prenom -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#prenom">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Personne"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="fr">prénom</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#telephone -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#telephone">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Personne"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>Fonctionnelle (en général, un établissement a un numéro principal)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#ActeMedical -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#ActeMedical">
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#CabinetMedical"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Clinique"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#EtablissementSante"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Hopital"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Pathologie"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#CabinetMedical -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#CabinetMedical">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#EtablissementSante"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Clinique"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostic"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ExamenMedical"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Infirmier"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Medecin"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Specialiste"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Traitement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Clinique -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Clinique">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#EtablissementSante"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostic"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ExamenMedical"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Hopital"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Infirmier"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Medecin"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Specialiste"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Traitement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Diagnostic -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Diagnostic">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#EtablissementSante"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Hopital"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Pathologie"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Traitement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#EtablissementSante -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#EtablissementSante">
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ExamenMedical"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Infirmier"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Medecin"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Specialiste"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Traitement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#ExamenMedical -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#ExamenMedical">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Hopital"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Pathologie"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Traitement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Hopital -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Hopital">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#EtablissementSante"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Infirmier"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Medecin"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Specialiste"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Traitement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Infirmier -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Infirmier">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Personne"/>
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Medecin"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Patient"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Specialiste"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Medecin -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Medecin">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Personne"/>
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Patient"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Medicament -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Medicament">
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Pathologie"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Pathologie -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Pathologie">
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Traitement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Patient -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Patient">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Personne"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Specialiste"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Personne -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Personne"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Personne"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Specialiste -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Specialiste">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Medecin"/>
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Personne"/>
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Traitement -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Traitement">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Amoxicilline -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Amoxicilline">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Medicament"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Cabine_DrHicham -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Cabine_DrHicham">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#CabinetMedical"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#EtablissementSante"/>
+        <ont:Nom>Cabine de Dr . Hicham Bakkali</ont:Nom>
+        <ont:adresse>Centre Medical Al Amal , sfax</ont:adresse>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Clinique_ALFarabi -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Clinique_ALFarabi">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Clinique"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#EtablissementSante"/>
+        <ont:Nom>Clinique AL Farabi</ont:Nom>
+        <ont:adresse>Boulevard V , Ariana</ont:adresse>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Diagnostique_COVID19 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_COVID19">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostic"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ExamenMedical"/>
+        <ont:esrPrescritPar rdf:resource="http://www.co-ode.org/ontologies/ont.owl#DrMedAli"/>
+        <ont:estRealisePar rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Manipulateur_IRM"/>
+        <ont:Nom>Examen IRM</ont:Nom>
+        <ont:frequence>Faiblesse ou paralysie d’un côté du corps (hémiplégie)
+
+Trouble de la parole (aphasie)
+
+Trouble de la vision
+
+Perte d’équilibre, vertiges
+
+Mal de tête soudain et intense</ont:frequence>
+        <ont:frequence>Fièvre
+
+Toux sèche
+
+Fatigue
+
+Maux de tête
+
+Douleurs musculaires ou articulaires
+
+Perte de goût ou d’odorat (anosmie/agueusie)
+
+Difficultés respiratoires (cas graves)
+
+Gorge irritée, nez qui coule
+
+Troubles digestifs (diarrhée, nausées)</ont:frequence>
+        <ont:frequence>Forte fièvre brutale
+
+Toux sèche
+
+Frissons
+
+Courbatures intenses
+
+Fatigue importante
+
+Mal de gorge
+
+Maux de tête
+
+Congestion nasale</ont:frequence>
+        <ont:frequence>IRM (Imagerie par Résonance Magnétique) est un examen d’imagerie médicale très utilisé pour observer avec précision les tissus mous, le cerveau, la moelle épinière, les articulations, les organes internes, etc.</ont:frequence>
+        <ont:frequence>Soif excessive (polydipsie)
+
+Mictions fréquentes (polyurie)
+
+Fatigue chronique
+
+Perte de poids inexpliquée (surtout type 1)
+
+Faim excessive (polyphagie)
+
+Vision floue
+
+Infections fréquentes (urinaires, peau)
+
+Cicatrisation lente</ont:frequence>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Diagnostique_Grippe -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_Grippe">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostic"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ExamenMedical"/>
+        <ont:esrPrescritPar rdf:resource="http://www.co-ode.org/ontologies/ont.owl#DrMedAli"/>
+        <ont:estRealisePar rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Manipulateur_IRM"/>
+        <ont:Nom>Examen IRM</ont:Nom>
+        <ont:frequence>Faiblesse ou paralysie d’un côté du corps (hémiplégie)
+
+Trouble de la parole (aphasie)
+
+Trouble de la vision
+
+Perte d’équilibre, vertiges
+
+Mal de tête soudain et intense</ont:frequence>
+        <ont:frequence>Fièvre
+
+Toux sèche
+
+Fatigue
+
+Maux de tête
+
+Douleurs musculaires ou articulaires
+
+Perte de goût ou d’odorat (anosmie/agueusie)
+
+Difficultés respiratoires (cas graves)
+
+Gorge irritée, nez qui coule
+
+Troubles digestifs (diarrhée, nausées)</ont:frequence>
+        <ont:frequence>Forte fièvre brutale
+
+Toux sèche
+
+Frissons
+
+Courbatures intenses
+
+Fatigue importante
+
+Mal de gorge
+
+Maux de tête
+
+Congestion nasale</ont:frequence>
+        <ont:frequence>IRM (Imagerie par Résonance Magnétique) est un examen d’imagerie médicale très utilisé pour observer avec précision les tissus mous, le cerveau, la moelle épinière, les articulations, les organes internes, etc.</ont:frequence>
+        <ont:frequence>Soif excessive (polydipsie)
+
+Mictions fréquentes (polyurie)
+
+Fatigue chronique
+
+Perte de poids inexpliquée (surtout type 1)
+
+Faim excessive (polyphagie)
+
+Vision floue
+
+Infections fréquentes (urinaires, peau)
+
+Cicatrisation lente</ont:frequence>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Diagnostique_cerveau -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_cerveau">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostic"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ExamenMedical"/>
+        <ont:esrPrescritPar rdf:resource="http://www.co-ode.org/ontologies/ont.owl#DrMedAli"/>
+        <ont:estRealisePar rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Manipulateur_IRM"/>
+        <ont:Nom>Examen IRM</ont:Nom>
+        <ont:frequence>Faiblesse ou paralysie d’un côté du corps (hémiplégie)
+
+Trouble de la parole (aphasie)
+
+Trouble de la vision
+
+Perte d’équilibre, vertiges
+
+Mal de tête soudain et intense</ont:frequence>
+        <ont:frequence>Fièvre
+
+Toux sèche
+
+Fatigue
+
+Maux de tête
+
+Douleurs musculaires ou articulaires
+
+Perte de goût ou d’odorat (anosmie/agueusie)
+
+Difficultés respiratoires (cas graves)
+
+Gorge irritée, nez qui coule
+
+Troubles digestifs (diarrhée, nausées)</ont:frequence>
+        <ont:frequence>Forte fièvre brutale
+
+Toux sèche
+
+Frissons
+
+Courbatures intenses
+
+Fatigue importante
+
+Mal de gorge
+
+Maux de tête
+
+Congestion nasale</ont:frequence>
+        <ont:frequence>IRM (Imagerie par Résonance Magnétique) est un examen d’imagerie médicale très utilisé pour observer avec précision les tissus mous, le cerveau, la moelle épinière, les articulations, les organes internes, etc.</ont:frequence>
+        <ont:frequence>Soif excessive (polydipsie)
+
+Mictions fréquentes (polyurie)
+
+Fatigue chronique
+
+Perte de poids inexpliquée (surtout type 1)
+
+Faim excessive (polyphagie)
+
+Vision floue
+
+Infections fréquentes (urinaires, peau)
+
+Cicatrisation lente</ont:frequence>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Diagnostique_diabetique -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_diabetique">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostic"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ExamenMedical"/>
+        <ont:esrPrescritPar rdf:resource="http://www.co-ode.org/ontologies/ont.owl#DrMedAli"/>
+        <ont:estRealisePar rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Manipulateur_IRM"/>
+        <ont:Nom>Examen IRM</ont:Nom>
+        <ont:frequence>Faiblesse ou paralysie d’un côté du corps (hémiplégie)
+
+Trouble de la parole (aphasie)
+
+Trouble de la vision
+
+Perte d’équilibre, vertiges
+
+Mal de tête soudain et intense</ont:frequence>
+        <ont:frequence>Fièvre
+
+Toux sèche
+
+Fatigue
+
+Maux de tête
+
+Douleurs musculaires ou articulaires
+
+Perte de goût ou d’odorat (anosmie/agueusie)
+
+Difficultés respiratoires (cas graves)
+
+Gorge irritée, nez qui coule
+
+Troubles digestifs (diarrhée, nausées)</ont:frequence>
+        <ont:frequence>Forte fièvre brutale
+
+Toux sèche
+
+Frissons
+
+Courbatures intenses
+
+Fatigue importante
+
+Mal de gorge
+
+Maux de tête
+
+Congestion nasale</ont:frequence>
+        <ont:frequence>IRM (Imagerie par Résonance Magnétique) est un examen d’imagerie médicale très utilisé pour observer avec précision les tissus mous, le cerveau, la moelle épinière, les articulations, les organes internes, etc.</ont:frequence>
+        <ont:frequence>Soif excessive (polydipsie)
+
+Mictions fréquentes (polyurie)
+
+Fatigue chronique
+
+Perte de poids inexpliquée (surtout type 1)
+
+Faim excessive (polyphagie)
+
+Vision floue
+
+Infections fréquentes (urinaires, peau)
+
+Cicatrisation lente</ont:frequence>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Doliprane -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Doliprane">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Medicament"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#DrAymen -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#DrAymen">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Medecin"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Personne"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Specialiste"/>
+        <ont:TravailleDans rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Clinique_ALFarabi"/>
+        <ont:TravailleDans rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Hopital_IbnSina"/>
+        <ont:aPourPatient rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Patient1"/>
+        <ont:aPourPatient rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Patient5"/>
+        <ont:prescrit rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Traitement_AntiBiotique"/>
+        <ont:prescrit rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Traitement_Paracetamol"/>
+        <ont:codeCIM>M002</ont:codeCIM>
+        <ont:dateNaissance>1992-12-01</ont:dateNaissance>
+        <ont:genre>Homme</ont:genre>
+        <ont:nom>Ben youssef</ont:nom>
+        <ont:prenom>Aymen</ont:prenom>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#DrHicham -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#DrHicham">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Medecin"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Personne"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Specialiste"/>
+        <ont:TravailleDans rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Cabine_DrHicham"/>
+        <ont:TravailleDans rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Hopital_IbnSina"/>
+        <ont:aPourPatient rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Patient3"/>
+        <ont:aPourPatient rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Patient7"/>
+        <ont:prescrit rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Traitement_AntiBiotique"/>
+        <ont:prescrit rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Traitement_Paracetamol"/>
+        <ont:codeCIM>M003</ont:codeCIM>
+        <ont:dateNaissance>1990-04-16</ont:dateNaissance>
+        <ont:genre>Homme</ont:genre>
+        <ont:nom>bakkali</ont:nom>
+        <ont:prenom>Hicham</ont:prenom>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#DrKhadija -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#DrKhadija">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Medecin"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Personne"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Specialiste"/>
+        <ont:TravailleDans rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Hopital_IbnSina"/>
+        <ont:aPourPatient rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Patient2"/>
+        <ont:aPourPatient rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Patient6"/>
+        <ont:aPourSpecialite rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Pathologie_Diabete"/>
+        <ont:prescrit rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Traitement_Diabetique"/>
+        <ont:codeCIM>M004</ont:codeCIM>
+        <ont:dateNaissance>1995-10-12</ont:dateNaissance>
+        <ont:genre>Femme</ont:genre>
+        <ont:nom>Radi</ont:nom>
+        <ont:prenom>Khadija</ont:prenom>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#DrMedAli -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#DrMedAli">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Medecin"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Personne"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Specialiste"/>
+        <ont:TravailleDans rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Hopital_IbnSina"/>
+        <ont:aPourPatient rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Patient4"/>
+        <ont:aPourSpecialite rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Pathologie_Neuro"/>
+        <ont:prescrit rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_COVID19"/>
+        <ont:prescrit rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_Grippe"/>
+        <ont:prescrit rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_cerveau"/>
+        <ont:prescrit rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_diabetique"/>
+        <ont:prescrit rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ExamenIRM"/>
+        <ont:prescrit rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Traitement_Paracetamol"/>
+        <ont:codeCIM>M001</ont:codeCIM>
+        <ont:dateNaissance>1990-05-12</ont:dateNaissance>
+        <ont:genre>Homme</ont:genre>
+        <ont:nom>Kechrida</ont:nom>
+        <ont:prenom>Med Ali</ont:prenom>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#ExamenIRM -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#ExamenIRM">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostic"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ExamenMedical"/>
+        <ont:esrPrescritPar rdf:resource="http://www.co-ode.org/ontologies/ont.owl#DrMedAli"/>
+        <ont:estRealisePar rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Manipulateur_IRM"/>
+        <ont:Nom>Examen IRM</ont:Nom>
+        <ont:frequence>Faiblesse ou paralysie d’un côté du corps (hémiplégie)
+
+Trouble de la parole (aphasie)
+
+Trouble de la vision
+
+Perte d’équilibre, vertiges
+
+Mal de tête soudain et intense</ont:frequence>
+        <ont:frequence>Fièvre
+
+Toux sèche
+
+Fatigue
+
+Maux de tête
+
+Douleurs musculaires ou articulaires
+
+Perte de goût ou d’odorat (anosmie/agueusie)
+
+Difficultés respiratoires (cas graves)
+
+Gorge irritée, nez qui coule
+
+Troubles digestifs (diarrhée, nausées)</ont:frequence>
+        <ont:frequence>Forte fièvre brutale
+
+Toux sèche
+
+Frissons
+
+Courbatures intenses
+
+Fatigue importante
+
+Mal de gorge
+
+Maux de tête
+
+Congestion nasale</ont:frequence>
+        <ont:frequence>IRM (Imagerie par Résonance Magnétique) est un examen d’imagerie médicale très utilisé pour observer avec précision les tissus mous, le cerveau, la moelle épinière, les articulations, les organes internes, etc.</ont:frequence>
+        <ont:frequence>Soif excessive (polydipsie)
+
+Mictions fréquentes (polyurie)
+
+Fatigue chronique
+
+Perte de poids inexpliquée (surtout type 1)
+
+Faim excessive (polyphagie)
+
+Vision floue
+
+Infections fréquentes (urinaires, peau)
+
+Cicatrisation lente</ont:frequence>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Hopital_IbnSina -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Hopital_IbnSina">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#EtablissementSante"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Hopital"/>
+        <ont:Nom>Hopital Ibn sina</ont:Nom>
+        <ont:adresse>Rue des Roses , Tunis</ont:adresse>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#InfAnna -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#InfAnna">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Personne"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+        <ont:codeCIM>I002</ont:codeCIM>
+        <ont:dateNaissance>1995-07-08</ont:dateNaissance>
+        <ont:genre>Femme</ont:genre>
+        <ont:nom>Garcia</ont:nom>
+        <ont:prenom>Anna</ont:prenom>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#InfLuc -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#InfLuc">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Personne"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+        <ont:codeCIM>I001</ont:codeCIM>
+        <ont:dateNaissance>1990-01-12</ont:dateNaissance>
+        <ont:genre>Homme</ont:genre>
+        <ont:nom>Benoit</ont:nom>
+        <ont:prenom>Luc</ont:prenom>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Insuline -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Insuline">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Medicament"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Manipulateur_IRM -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Manipulateur_IRM">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Medecin"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Personne"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Specialiste"/>
+        <ont:codeCIM>IRM001</ont:codeCIM>
+        <ont:dateNaissance>1990-11-02</ont:dateNaissance>
+        <ont:genre>Homme</ont:genre>
+        <ont:nom>Jemni</ont:nom>
+        <ont:prenom>Mohsen</ont:prenom>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Pathologie_Diabete -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Pathologie_Diabete">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Pathologie"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Pathologie_Neuro -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Pathologie_Neuro">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Pathologie"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Patient1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Patient1">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Patient"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Personne"/>
+        <ont:aPourDiagmostic rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_COVID19"/>
+        <ont:aPourDiagmostic rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_Grippe"/>
+        <ont:aPourDiagmostic rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_cerveau"/>
+        <ont:aPourDiagmostic rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_diabetique"/>
+        <ont:aPourDiagmostic rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ExamenIRM"/>
+        <ont:codeCIM>P001</ont:codeCIM>
+        <ont:dateActe rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-05-10T13:15:00</ont:dateActe>
+        <ont:dateNaissance>1982-06-14</ont:dateNaissance>
+        <ont:genre>Homme</ont:genre>
+        <ont:nom>El Amrani</ont:nom>
+        <ont:prenom>youssef</ont:prenom>
+        <ont:telephone rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">23614678</ont:telephone>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Patient2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Patient2">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Patient"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Personne"/>
+        <ont:aPourDiagmostic rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_COVID19"/>
+        <ont:aPourDiagmostic rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_Grippe"/>
+        <ont:aPourDiagmostic rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_cerveau"/>
+        <ont:aPourDiagmostic rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_diabetique"/>
+        <ont:aPourDiagmostic rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ExamenIRM"/>
+        <ont:codeCIM>P002</ont:codeCIM>
+        <ont:dateActe rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-05-05T11:15:00</ont:dateActe>
+        <ont:dateNaissance>1990-03-22</ont:dateNaissance>
+        <ont:genre>Femme</ont:genre>
+        <ont:nom>Benali</ont:nom>
+        <ont:prenom>Samira</ont:prenom>
+        <ont:telephone rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">23456789</ont:telephone>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Patient3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Patient3">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Patient"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Personne"/>
+        <ont:aPourDiagmostic rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_COVID19"/>
+        <ont:aPourDiagmostic rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_Grippe"/>
+        <ont:aPourDiagmostic rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_cerveau"/>
+        <ont:aPourDiagmostic rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_diabetique"/>
+        <ont:aPourDiagmostic rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ExamenIRM"/>
+        <ont:codeCIM>P003</ont:codeCIM>
+        <ont:dateActe rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-05-06T14:00:00</ont:dateActe>
+        <ont:dateNaissance>1975-10-01</ont:dateNaissance>
+        <ont:genre>Homme</ont:genre>
+        <ont:nom>Tazi</ont:nom>
+        <ont:prenom>Mehdi</ont:prenom>
+        <ont:telephone rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">24567891</ont:telephone>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Patient4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Patient4">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Patient"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Personne"/>
+        <ont:aPourDiagmostic rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_COVID19"/>
+        <ont:aPourDiagmostic rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_Grippe"/>
+        <ont:aPourDiagmostic rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_cerveau"/>
+        <ont:aPourDiagmostic rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_diabetique"/>
+        <ont:aPourDiagmostic rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ExamenIRM"/>
+        <ont:codeCIM>P004</ont:codeCIM>
+        <ont:dateActe rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-05-07T16:45:00</ont:dateActe>
+        <ont:dateNaissance>2000-12-12</ont:dateNaissance>
+        <ont:genre>Femme</ont:genre>
+        <ont:nom>Sebbar</ont:nom>
+        <ont:prenom>Fatima</ont:prenom>
+        <ont:telephone rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">54678912</ont:telephone>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Patient5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Patient5">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Patient"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Personne"/>
+        <ont:aPourDiagmostic rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_COVID19"/>
+        <ont:aPourDiagmostic rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_Grippe"/>
+        <ont:aPourDiagmostic rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_cerveau"/>
+        <ont:aPourDiagmostic rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_diabetique"/>
+        <ont:aPourDiagmostic rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ExamenIRM"/>
+        <ont:codeCIM>P005</ont:codeCIM>
+        <ont:dateActe rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-05-08T08:00:00</ont:dateActe>
+        <ont:dateNaissance>1975-03-20</ont:dateNaissance>
+        <ont:genre>Homme</ont:genre>
+        <ont:nom>Karim</ont:nom>
+        <ont:prenom>Ahmed</ont:prenom>
+        <ont:telephone rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">92556688</ont:telephone>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Patient6 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Patient6">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Patient"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Personne"/>
+        <ont:aPourDiagmostic rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_COVID19"/>
+        <ont:aPourDiagmostic rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_Grippe"/>
+        <ont:aPourDiagmostic rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_cerveau"/>
+        <ont:aPourDiagmostic rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_diabetique"/>
+        <ont:aPourDiagmostic rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ExamenIRM"/>
+        <ont:codeCIM>P006</ont:codeCIM>
+        <ont:dateActe rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-05-09T10:30:00</ont:dateActe>
+        <ont:dateNaissance>1995-11-10</ont:dateNaissance>
+        <ont:genre>Femme</ont:genre>
+        <ont:nom>Martin</ont:nom>
+        <ont:prenom>Claire</ont:prenom>
+        <ont:telephone rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">55668844</ont:telephone>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Patient7 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Patient7">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Patient"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Personne"/>
+        <ont:aPourDiagmostic rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_COVID19"/>
+        <ont:aPourDiagmostic rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_Grippe"/>
+        <ont:aPourDiagmostic rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_cerveau"/>
+        <ont:aPourDiagmostic rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_diabetique"/>
+        <ont:aPourDiagmostic rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ExamenIRM"/>
+        <ont:codeCIM>P007</ont:codeCIM>
+        <ont:dateActe rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-05-10T13:30:00</ont:dateActe>
+        <ont:dateNaissance>1980-05-09</ont:dateNaissance>
+        <ont:genre>Homme</ont:genre>
+        <ont:nom>Dupont</ont:nom>
+        <ont:prenom>Jean</ont:prenom>
+        <ont:telephone rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">95662211</ont:telephone>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Traitement_AntiBiotique -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Traitement_AntiBiotique">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Traitement"/>
+        <ont:esrPrescritPar rdf:resource="http://www.co-ode.org/ontologies/ont.owl#DrAymen"/>
+        <ont:esrPrescritPar rdf:resource="http://www.co-ode.org/ontologies/ont.owl#DrHicham"/>
+        <ont:estRealisePar rdf:resource="http://www.co-ode.org/ontologies/ont.owl#InfAnna"/>
+        <ont:utiliseMed rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Amoxicilline"/>
+        <ont:Nom>traitement antibiotique</ont:Nom>
+        <ont:frequence>3 fois par jours pour 15 jours</ont:frequence>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Traitement_Diabetique -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Traitement_Diabetique">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Traitement"/>
+        <ont:esrPrescritPar rdf:resource="http://www.co-ode.org/ontologies/ont.owl#DrKhadija"/>
+        <ont:estRealisePar rdf:resource="http://www.co-ode.org/ontologies/ont.owl#InfLuc"/>
+        <ont:utiliseMed rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Insuline"/>
+        <ont:Nom>traitement diabetique</ont:Nom>
+        <ont:frequence>des shots d&apos;insuline chaque jours jusqu&apos;a la visite prochaine</ont:frequence>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Traitement_Paracetamol -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Traitement_Paracetamol">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Traitement"/>
+        <ont:esrPrescritPar rdf:resource="http://www.co-ode.org/ontologies/ont.owl#DrAymen"/>
+        <ont:esrPrescritPar rdf:resource="http://www.co-ode.org/ontologies/ont.owl#DrHicham"/>
+        <ont:esrPrescritPar rdf:resource="http://www.co-ode.org/ontologies/ont.owl#DrMedAli"/>
+        <ont:estRealisePar rdf:resource="http://www.co-ode.org/ontologies/ont.owl#InfAnna"/>
+        <ont:estRealisePar rdf:resource="http://www.co-ode.org/ontologies/ont.owl#InfLuc"/>
+        <ont:utiliseMed rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Doliprane"/>
+        <ont:Nom>traitement paracetamol</ont:Nom>
+        <ont:frequence>2 fois par jour pour 10 jours</ont:frequence>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#e">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#prof">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#med">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#p">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#m">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#e1">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#e2">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>R4</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ExamenMedical"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#e"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#estRealisePar"/>
+                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#e"/>
+                                <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#prof"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+                                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#prof"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#aPourPatient"/>
+                                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#med"/>
+                                                <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#p"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                        <swrl:classPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Medecin"/>
+                                                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#med"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#aPourDiagmostic"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#p"/>
+                        <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#e"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>R2</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Medecin"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#m"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#TravailleDans"/>
+                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#m"/>
+                                <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#e1"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#TravailleDans"/>
+                                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#m"/>
+                                        <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#e2"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom"/>
+                                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#e1"/>
+                                                <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#e2"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Specialiste"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#m"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>R5</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Medecin"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#m"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#aPourSpecialite"/>
+                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#m"/>
+                                <swrl:argument2 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Pathologie_Diabete"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#m"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>R6</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Medecin"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#m"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#aPourSpecialite"/>
+                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#m"/>
+                                <swrl:argument2 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Pathologie_Neuro"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#m"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>R3</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Patient"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#aPourDiagmostic"/>
+                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#p"/>
+                                <swrl:argument2 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_COVID19"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#prescrit"/>
+                        <swrl:argument1 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#DrAymen"/>
+                        <swrl:argument2 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Traitement_Paracetamol"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>R1</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Patient"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#aPourDiagmostic"/>
+                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#p"/>
+                                <swrl:argument2 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_cerveau"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#esrPrescritPar"/>
+                        <swrl:argument1 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ExamenIRM"/>
+                        <swrl:argument2 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#DrMedAli"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
